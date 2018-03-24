@@ -2,8 +2,11 @@ $(document).ready(function() {
 
 	$("a").html(function() {
 		var id = "class='bottom_button'";
-		$("a").replaceWith("<button " + id + " >Button</button>");
+		$(".bottom_button").replaceWith("<button " + id + " >Button</button>");
 		$("button").first().attr("id", "one");
+	});
+	$("p").on("click", function() {
+		$(this).children("a").addClass('pClick');
 	});
 	$("button").on("click", function() {
 		$(this).siblings("p").slideToggle(500)
@@ -31,6 +34,15 @@ $(document).ready(function() {
 		$(".stream2").removeClass('highlight_stream');
 		$(".stream3").removeClass('highlight_stream');
 		$(".stream3").addClass('highlight_stream');
+	});
+	$("#stream4_btn").on("click", function() {
+		$(".card:not(.makePink)").hide();
+	});
+	$("#stream5_btn").on("click", function() {
+		$(".card").show();
+	});
+	$(".card").click(function() {
+		$(this).toggleClass("makePink");;
 	});
 
 	/*	$("p").on("click", function() {
